@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es2015",
     "module": "commonjs",
     "declaration": true,
-    "outDir": "./build",
-    "types": ["node"],
-    "lib": ["es2020"],
+    "outDir": "./build/js",
+    "types": [],
+    "lib": ["es2020", "DOM"],
     "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
     "sourceMap": true
   },
   "exclude": ["**/node_modules", "**/tests", "**/build"],
-  "include": ["src"]
+  "include": ["src/js"]
 }

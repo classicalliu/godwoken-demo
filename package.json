@@ -1,7 +1,27 @@
 {
   "name": "godwoken-demo",
   "version": "0.0.1",
-  "main": "build/index.ts",
-  "types": "build/index.d.ts",
-  "license": "MIT"
+  "main": "build/js/index.ts",
+  "types": "build/js/index.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@lay2/pw-core": "^0.3.21",
+    "process": "^0.11.10"
+  },
+  "scripts": {
+    "b": "tsc && cp -r src/html build/html",
+    "clean": "rm -rf build",
+    "build": "webpack --config webpack.dev.config.js && cp -r src/html build/html",
+    "start": "webpack serve --config webpack.dev.config.js",
+    "build:prod": "export NODE_ENV=production && webpack --config webpack.prod.config.js && cp -r src/html build/html"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "ts-loader": "^8.0.12",
+    "typescript": "^4.1.3",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.7.3"
+  }
 }
