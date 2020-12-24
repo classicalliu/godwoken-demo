@@ -6,14 +6,15 @@
   "license": "MIT",
   "dependencies": {
     "@lay2/pw-core": "^0.3.21",
+    "ckb-js-toolkit": "^0.9.3",
     "process": "^0.11.10"
   },
   "scripts": {
-    "b": "tsc && cp -r src/html build/html",
     "clean": "rm -rf build",
-    "build": "webpack --config webpack.dev.config.js && cp -r src/html build/html",
+    "cp-files": "cp -r src/html build/html && cp -r src/schemas build/schemas",
+    "build": "webpack --config webpack.dev.config.js && yarn run cp-files",
     "start": "webpack serve --config webpack.dev.config.js",
-    "build:prod": "export NODE_ENV=production && webpack --config webpack.prod.config.js && cp -r src/html build/html"
+    "build:prod": "export NODE_ENV=production && webpack --config webpack.prod.config.js && yarn run cp-files"
   },
   "devDependencies": {
     "browserify": "^17.0.0",
